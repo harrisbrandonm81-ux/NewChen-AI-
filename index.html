@@ -11,21 +11,21 @@
       <header class="top-bar">
         <h1>NewChen AI</h1>
         <div class="actions">
-          <button id="settingsBtn" class="ghost">Settings</button>
-          <button id="clearChatBtn" class="danger">Clear Chat</button>
+          <button id="settingsBtn" class="ghost" type="button">Settings</button>
+          <button id="clearChatBtn" class="danger" type="button">Clear Chat</button>
         </div>
       </header>
 
       <section id="chat" class="chat" aria-live="polite">
         <article class="message bot">
-          <p>Hi, I’m NewChen AI. Ask me anything!</p>
+          <p>Ask me anything. I’ll forward questions to ChatGPT when no local answer exists.</p>
         </article>
       </section>
 
       <form id="chatForm" class="composer">
         <label for="messageInput" class="sr-only">Your message</label>
         <input id="messageInput" type="text" placeholder="Type your message..." required />
-        <button type="submit">Send</button>
+        <button id="sendBtn" type="submit">Send</button>
       </form>
     </main>
 
@@ -35,6 +35,14 @@
         <label>
           Display name
           <input id="displayNameInput" type="text" value="You" />
+        </label>
+        <label>
+          OpenAI API key
+          <input id="apiKeyInput" type="password" placeholder="sk-..." autocomplete="off" />
+        </label>
+        <label>
+          Model
+          <input id="modelInput" type="text" value="gpt-4o-mini" />
         </label>
         <menu>
           <button value="cancel">Cancel</button>
