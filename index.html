@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NewChen AI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="top-bar">
+        <h1>NewChen AI</h1>
+        <div class="actions">
+          <button id="settingsBtn" class="ghost" type="button">Settings</button>
+          <button id="clearChatBtn" class="danger" type="button">Clear Chat</button>
+        </div>
+      </header>
+
+      <section id="chat" class="chat" aria-live="polite">
+        <article class="message bot">
+          <p>Ask me anything. I’ll forward questions to ChatGPT when no local answer exists.</p>
+        </article>
+      </section>
+
+      <form id="chatForm" class="composer">
+        <label for="messageInput" class="sr-only">Your message</label>
+        <input id="messageInput" type="text" placeholder="Type your message..." required />
+        <button id="sendBtn" type="submit">Send</button>
+      </form>
+    </main>
+
+    <dialog id="settingsDialog">
+      <form method="dialog" class="settings-form">
+        <h2>Settings</h2>
+        <label>
+          Display name
+          <input id="displayNameInput" type="text" value="You" />
+        </label>
+        <label>
+          OpenAI API key
+          <input id="apiKeyInput" type="password" placeholder="sk-..." autocomplete="off" />
+        </label>
+        <label>
+          Model
+          <input id="modelInput" type="text" value="gpt-4o-mini" />
+        </label>
+        <menu>
+          <button value="cancel">Cancel</button>
+          <button id="saveSettingsBtn" value="default">Save</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
